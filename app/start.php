@@ -4,6 +4,10 @@ use Slim\Slim;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 
+use Noodlehaus\Config;
+
+use lalocespedes\User\User;
+
 ini_set('display_errors', 'On');
 
 define('INC_ROOT', dirname(__DIR__));
@@ -18,6 +22,11 @@ $app = new Slim([
 	'templates.path' => INC_ROOT . '/app/views'
 ]);
 
+$app->configureMode($app->config('mode'), function() use ($app) {
+	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
+});
+
+require 'database.php';
 require 'routes.php';
 
 $view = $app->view();
@@ -29,3 +38,7 @@ $view->parseOptions = [
 $view->parserExtensions = [
 	new TwigExtension
 ];
+
+$app->container->set('user', function() {
+	return new User;
+});
