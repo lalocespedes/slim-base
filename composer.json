@@ -12,7 +12,9 @@
         }
     ],
     "require": {
-    	 "php": "5.6.*",
-    	 "slim/slim": "~2.0"
+    	"php": "5.6.*",
+    	"slim/slim": "~2.0",
+        "slim/views": "0.1.*",
+        "twig/twig": "~1.0"
     }
 }

@@ -1,5 +1,9 @@
 <?php
 
-$app->get('/', function () {
-    echo "home";
+$app->get('/', function () use ($app) {
+    
+	$app->render('/home/home.twig', [
+		'name'	=> 'lalo'
+	]);
+
 });
