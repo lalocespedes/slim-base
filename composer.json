@@ -1,0 +1,17 @@
+{
+    "autoload":{
+        "psr-4":{
+            "lalocespedes\\": "app//lalocespedes"
+        }
+    },
+    "name": "lalocespedes/slim-base",
+    "authors": [
+        {
+            "name": "lalocespedes",
+            "email": "lalocespedes@gmail.com"
+        }
+    ],
+    "require": {
+    	 "php": "5.6.*"
+    }
+}
