@@ -2,4 +2,4 @@
 
 require '../app/start.php';
 
-echo "init";
+$app->run();
