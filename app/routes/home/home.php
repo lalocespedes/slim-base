@@ -8,4 +8,4 @@ $app->get('/', function () use ($app) {
 		'name'	=> 'lalo'
 	]);
 
-});
+})->name('home');

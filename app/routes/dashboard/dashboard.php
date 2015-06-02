@@ -1,5 +1,5 @@
 <?php
 
-$app->get('/dashboard', function () {
+$app->get('/dashboard', $authenticated(), function() use ($app) {
     echo "dashboard";
 });
