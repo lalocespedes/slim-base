@@ -9,6 +9,8 @@ use Carbon\Carbon;
 use Violin\Violin;
 
 use lalocespedes\User\User;
+use lalocespedes\Middleware\BeforeMiddleware;
+
 
 session_cache_limiter(false);
 session_start();
@@ -24,6 +26,8 @@ $app = new Slim([
 	'view'	=> new Twig(),
 	'templates.path' => INC_ROOT . '/app/views'
 ]);
+
+$app->add(new BeforeMiddleware);
 
 $app->configureMode($app->config('mode'), function() use ($app) {
 	$app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");

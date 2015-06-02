@@ -22,6 +22,8 @@ $app->post('/login', $guest(), function() use ($app) {
 	]);
 
 	if ($v->passes()) {
+
+		$_SESSION[$app->config->get('auth.session')] = 1;
 	
 		$app->flash('welcome', 'Bienvenido!');
 		$app->response->redirect($app->urlFor('dashboard'));
