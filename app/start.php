@@ -5,6 +5,8 @@ use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 
 use Noodlehaus\Config;
+use Carbon\Carbon;
+use Violin\Violin;
 
 use lalocespedes\User\User;
 
@@ -45,4 +47,8 @@ $app->auth = false;
 
 $app->container->set('user', function() {
 	return new User;
+});
+
+$app->container->singleton('validation', function() use ($app) {
+	return new Violin($app->user, $app->auth);
 });

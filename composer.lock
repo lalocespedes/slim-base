@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9387007dec8d2ee1e3ef408f44c6cab9",
+    "hash": "ca03a018a38b194e16e6e16f0e70d8f4",
     "packages": [
+        {
+            "name": "alexgarrett/violin",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alexgarrett/violin.git",
+                "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alexgarrett/violin/zipball/92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
+                "reference": "92d0ee5d0e7cc1703fe937772c313721fdb86cdc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5",
+                "squizlabs/php_codesniffer": "2.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Violin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Garrett",
+                    "email": "alex@codecourse.com",
+                    "homepage": "http://itsmealex.com"
+                }
+            ],
+            "description": "Violin is an easy to use, highly customisable PHP validator.",
+            "homepage": "https://github.com/alexgarrett/violin",
+            "keywords": [
+                "validation"
+            ],
+            "time": "2015-04-11 22:58:34"
+        },
         {
             "name": "danielstjules/stringy",
             "version": "1.9.0",

@@ -1,7 +1,5 @@
 <?php
 
-use Carbon\Carbon;
-
 $app->get('/login', $guest(), function() use ($app) {
 
 	$app->render('auth/login.php');
@@ -11,6 +9,28 @@ $app->get('/login', $guest(), function() use ($app) {
 
 $app->post('/login', $guest(), function() use ($app) {
 
-	echo "loged";
+	$request = $app->request;
+
+	$identifier = $request->post('identifier');
+	$password = $request->post('password');
+
+	$v = $app->validation;
+
+	$v->validate([
+		'identifier' => [$identifier, 'required'],
+		'password' => [$password, 'required']
+	]);
+
+	if ($v->passes()) {
+	
+		$app->flash('welcome', 'Bienvenido!');
+		$app->response->redirect($app->urlFor('dashboard'));
+
+	}
+
+	$app->render('auth/login.php', [
+		'errors' 	=> $v->errors(),
+		'request'	=> $request
+	]);	
 
 })->name('login.post');
