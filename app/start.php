@@ -11,7 +11,6 @@ use Violin\Violin;
 use lalocespedes\User\User;
 use lalocespedes\Middleware\BeforeMiddleware;
 
-
 session_cache_limiter(false);
 session_start();
 
